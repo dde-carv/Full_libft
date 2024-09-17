@@ -18,15 +18,19 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	typedef unsigned char uc;
+	unsigned char	*dst;
+	unsigned char	*sorce;
+
+	dst = (unsigned char *) dest;
+	sorce = (unsigned char *) src;
 	if (src == NULL && dest == NULL)
 		return (dest);
-	if (dest > src)
+	if (dst > sorce)
 	{
 		while (n > 0)
 		{
 			n--;
-			*((uc *)dest + n) = *((uc *)src + n);
+			*(dst + n) = *(sorce + n);
 		}
 	}
 	else
