@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dde-carv <dde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/09 16:55:54 by dde-carv          #+#    #+#             */
-/*   Updated: 2025/01/17 16:26:42 by dde-carv         ###   ########.fr       */
+/*   Created: 2024/12/20 14:55:02 by dde-carv          #+#    #+#             */
+/*   Updated: 2025/01/15 11:36:12 by dde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "../../inc/libft.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <fcntl.h>
-# include <stdio.h>
+char	*ft_strcpy(char *dst, const char *src)
+{
+	int	i;
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
-# endif
-
-char	*get_next_line(int fd);
-char	*ft_gnl_strjoin(char *s1, char *s2);
-
-#endif
+	i = 0;
+	if (!dst || !src)
+		return (NULL);
+	while (src[i] != '\0')
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (dst);
+}

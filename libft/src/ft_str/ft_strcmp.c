@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dde-carv <dde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/09 16:55:54 by dde-carv          #+#    #+#             */
-/*   Updated: 2025/01/17 16:26:42 by dde-carv         ###   ########.fr       */
+/*   Created: 2024/12/20 15:12:34 by dde-carv          #+#    #+#             */
+/*   Updated: 2025/04/08 09:53:21 by dde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "../../inc/libft.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <fcntl.h>
-# include <stdio.h>
+int	ft_strcmp(const char *s1, const char *s2)
+{
+	size_t			len;
+	unsigned char	*str1;
+	unsigned char	*str2;
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
-# endif
-
-char	*get_next_line(int fd);
-char	*ft_gnl_strjoin(char *s1, char *s2);
-
-#endif
+	len = 0;
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
+	if (!s1 || !s2)
+		return (42);
+	while (str1[len] && str2[len] && str1[len] == str2[len])
+		len++;
+	return (str1[len] - str2[len]);
+}

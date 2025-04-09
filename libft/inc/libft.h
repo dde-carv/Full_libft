@@ -16,20 +16,28 @@
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
-# include "printf.h"
+# include <stdio.h>
+# include "ft_printf.h"
+# include "get_next_line.h"
 
 //String Prototypes
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
+int		ft_islower(int c);
+int		ft_isupper(int c);
 int		ft_isascii(int c);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strchr(const char *str, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(const char *big, const char *little, size_t n);
+char	*ft_strcpy(char *dst, const char *src);
+char	*ft_strncpy(char *dest, const char *src, size_t n);
+char	*ft_strcat(char *dest, const char *src);
 size_t	ft_strlen(const char *str);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
@@ -49,6 +57,7 @@ char	*ft_strdup(const char *src);
 
 //Additional functions
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin_var(unsigned int arg_n, ...);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);

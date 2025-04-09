@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dde-carv <dde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/09 16:55:54 by dde-carv          #+#    #+#             */
-/*   Updated: 2025/01/17 16:26:42 by dde-carv         ###   ########.fr       */
+/*   Created: 2024/12/20 14:57:32 by dde-carv          #+#    #+#             */
+/*   Updated: 2025/01/15 11:36:06 by dde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "../../inc/libft.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <fcntl.h>
-# include <stdio.h>
+char	*ft_strcat(char *dest, const char *src)
+{
+	int	i;
+	int	j;
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
-# endif
-
-char	*get_next_line(int fd);
-char	*ft_gnl_strjoin(char *s1, char *s2);
-
-#endif
+	i = 0;
+	j = ft_strlen(dest);
+	while (src[i])
+	{
+		dest[j] = src[i];
+		i++;
+		j++;
+	}
+	dest[j] = '\0';
+	return (dest);
+}
